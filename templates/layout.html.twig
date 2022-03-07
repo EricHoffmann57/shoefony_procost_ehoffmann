@@ -12,7 +12,7 @@
     <!-- Navbar Right Menu-->
     <ul class="app-nav">
         <li class="app-search">
-            <a href="login.html" class="btn btn-info">Se déconnecter</a>
+            <a href="login.html" class="btn btn-info">Logout</a>
         </li>
     </ul>
 </header>
@@ -24,45 +24,45 @@
                 <p class="app-sidebar__user-designation">Manager</p>
             </div>
         </div>
+        {% set current_route = app.request.attributes.get('_route') %}
         <ul class="app-menu">
-            {% set current_route = app.request.attributes.get('_route') %}
-            <li class="{{ current_route is same as 'main_homepage' ? 'active' }}">
-                <a class="app-menu__item active" href="{{ path('main_homepage') }}">
+            <li>
+                <a class="app-menu__item {{ current_route is same as 'main_homepage' ? 'active' }}" href="{{ path('main_homepage') }}">
                     <i class="app-menu__icon fa fa-dashboard"></i>
-                    <span class="app-menu__label">Tableau de bord</span>
+                    <span class="app-menu__label">Dashboard</span>
                 </a>
             </li>
             <li>
-                <a class="app-menu__item" href="list.html">
+                <a class="app-menu__item class=" href="list.html">
                     <i class="app-menu__icon fa fa-laptop"></i>
-                    <span class="app-menu__label">Projets</span>
-                </a>
-            </li>
-            <li class="{{ current_route starts with 'company_' ? 'active' }}">
-                <a class="app-menu__item" href="{{ path('company_list_employees') }}">
-                    <i class="app-menu__icon fa fa-users"></i>
-                    <span class="app-menu__label">Employés</span>
+                    <span class="app-menu__label">Projects</span>
                 </a>
             </li>
             <li>
-                <a class="app-menu__item" href="#">
+                <a class="app-menu__item {{ current_route is same as 'company_list_employees' ? 'active' }}" href="{{ path('company_list_employees') }}">
+                    <i class="app-menu__icon fa fa-users"></i>
+                    <span class="app-menu__label">Employees</span>
+                </a>
+            </li>
+            <li>
+                <a class="app-menu__item {{ current_route is same as 'company_list_jobs' ? 'active' }}" href="{{ path('company_list_jobs') }}">
                     <i class="app-menu__icon fa fa-book"></i>
-                    <span class="app-menu__label">Métiers</span>
+                    <span class="app-menu__label">Jobs</span>
                 </a>
             </li>
         </ul>
     </aside>
     <!-- Page Content -->
-    <div class="app sidebar-mini">
+
         {% block content %}{% endblock %}
 
         <hr/>
 
         <!-- Footer -->
-        <footer>
+        <footer class="main-footer">
             <p>Copyright &copy; PROCOST {{ 'now'|date('Y') }}</p>
         </footer>
-    </div>
+
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}

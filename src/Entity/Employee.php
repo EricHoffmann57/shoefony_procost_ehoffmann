@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-use App\Repository\EmployeeRepository;
+use App\Repository\Company\EmployeeRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -30,18 +30,16 @@ class Employee
     #[Assert\Email(message: 'email address must be valid')]
     private ?string $email = null;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\ManyToOne(targetEntity: Job::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Job $job;
+
+    #[ORM\Column(type: 'integer')]
     #[Assert\NotBlank(message: 'this field cannot be empty')]
-    #[Assert\Length(min: 10, minMessage: 'Minimum size for this field is {{ limit }} characters')]
-    private ?string $job = null;
+    private ?string $dailyCost = null;
 
     #[ORM\Column(type: 'datetime')]
-    private \DateTime $createdAt;
-
-    public function __construct()
-    {
-        $this->createdAt = new \DateTime();
-    }
+    private \datetimeInterface $hiringDate;
 
     public function getId(): ?int
     {
@@ -84,20 +82,37 @@ class Employee
         return $this;
     }
 
-    public function getJob(): ?string
+    public function getJob(): ?Job
     {
         return $this->job;
     }
 
-    public function setJob(?string $job): self
+    public function setJob(?Job $job): self
     {
         $this->job = $job;
 
         return $this;
     }
 
-    public function getCreatedAt(): \DateTime
+    public function getDailyCost(): ?string
     {
-        return $this->createdAt;
+        return $this->dailyCost;
+    }
+
+    public function setDailyCost(?string $dailyCost): self
+    {
+        $this->dailyCost = $dailyCost;
+        return $this;
+    }
+
+    public function getHiringDate(): \DateTimeInterface
+    {
+        return $this->hiringDate;
+    }
+
+
+    public function setHiringDate(\DateTimeInterface $hiringDate): void
+    {
+        $this->hiringDate = $hiringDate;
     }
 }
