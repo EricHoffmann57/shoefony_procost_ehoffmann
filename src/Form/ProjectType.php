@@ -17,12 +17,16 @@ class ProjectType extends  AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options) : void
     {
         $builder
-            ->add('name', TextType::class, ['label' => 'Project'])
-            ->add('description', TextType::class, ['label' => 'Description'])
-            ->add('sellingPrice', IntegerType::class, ['label' => 'selling Price'])
+            ->add('name', TextType::class, ['label' => 'Project','attr' => [
+        'style' => 'margin-bottom:15px;margin-left: 15px; width:500 px']])
+            ->add('description', TextType::class, ['label' => 'Description','attr' => [
+        'style' => 'margin-bottom:15px;margin-left: 15px; width:500px']])
+            ->add('sellingPrice', IntegerType::class, ['label' => 'selling Price','attr' => [
+                'style' => 'margin-bottom:15px;margin-left: 15px; width:500 px']])
             ->add('created_at', DateType::class, [
                 'widget' => 'single_text',
-                'format' => 'yyyy-MM-dd',
+                'format' => 'yyyy-MM-dd','attr' => [
+                    'style' => 'margin-bottom:15px;margin-left: 22px; width:500 px']
             ])
         ;
 

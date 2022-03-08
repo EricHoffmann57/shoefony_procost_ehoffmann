@@ -15,8 +15,13 @@
                     <div class="widget-small info coloured-icon">
                         <i class="icon fa fa-spinner fa-3x" aria-hidden="true"></i>
                         <div class="info">
-                            <p class="text-muted text-sm text-uppercase">Projets en cours</p>
-                            <p><strong>11</strong></p>
+                            <p class="text-muted text-sm text-uppercase">Pending projects</p>
+                            <p>{% if pending.projects != null %}
+                                <strong>{{ pending.projects }}</strong>
+                                {% else %}
+                                    <strong>0</strong>
+                                {% endif %}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -24,8 +29,13 @@
                     <div class="widget-small warning coloured-icon">
                         <i class="icon fa fa-check-square-o fa-3x" aria-hidden="true"></i>
                         <div class="info">
-                            <p class="text-muted text-sm text-uppercase">Projets livrés</p>
-                            <p><strong>76</strong></p>
+                            <p class="text-muted text-sm text-uppercase">Released projects</p>
+                            <p>{% if released.projects != null %}
+                                <strong>{{ released.projects }}</strong>
+                                {% else %}
+                                <strong>0</strong>
+                                {% endif %}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -33,8 +43,8 @@
                     <div class="widget-small primary coloured-icon">
                         <i class="icon fa fa-users fa-3x"></i>
                         <div class="info">
-                            <p class="text-muted text-sm text-uppercase">Employés</p>
-                            <p><strong>34</strong></p>
+                            <p class="text-muted text-sm text-uppercase">Employees</p>
+                            <p><strong>{{ countEmployees.count }}</strong></p>
                         </div>
                     </div>
                 </div>
@@ -42,8 +52,8 @@
                     <div class="widget-small danger coloured-icon">
                         <i class="icon fa fa-calendar-check-o fa-3x" aria-hidden="true"></i>
                         <div class="info">
-                            <p class="text-muted text-sm text-uppercase">Jours de production</p>
-                            <p><strong>267</strong></p>
+                            <p class="text-muted text-sm text-uppercase">Days of development</p>
+                            <p><strong>{{ allDevTime.time }}</strong></p>
                         </div>
                     </div>
                 </div>
@@ -51,10 +61,17 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card text-uppercase">
-                        <div class="card-header text-center">Rentabilité</div>
+                        <div class="card-header text-center">Rentability</div>
                         <div class="card-body">
                             <p class="text-muted">
-                                <i class="fa fa-database mr-2 text-primary"></i> 70% RENTABLE
+                                {% set rentability = 0 %}
+                                {% for last in totalCost %}
+                                    {% if last.releaseDate != null %}
+                                {% set rentability = (rentability + last.cost)  %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% set rentability = 100 - ((rentability * 100)/totalSell.sell) %}
+                                <i class="fa fa-database mr-2 text-primary"></i> {{ rentability|round(0,'floor') }}% RENTABILITY
                             </p>
                             <div class="embed-responsive embed-responsive-16by9">
                                 <canvas id="ratio-chart" class="embed-responsive-item"></canvas>
@@ -67,7 +84,8 @@
                         <div class="card-header text-center">Taux de livraison</div>
                         <div class="card-body">
                             <p class="text-muted">
-                                <i class="fa fa fa-check-square-o mr-2 text-primary"></i> 35% Livrés
+                                {% set total = (released.projects /(released.projects + pending.projects))*100 %}
+                                <i class="fa fa fa-check-square-o mr-2 text-primary"></i> {{ total|round(0,'floor') }}% Released
                             </p>
                             <div class="embed-responsive embed-responsive-16by9">
                                 <canvas id="delivered-chart" class="embed-responsive-item"></canvas>
@@ -103,72 +121,34 @@
             <div class="tile table-responsive">
                 <h2 class="tile-title">Les derniers projets</h2>
                 <table class="table table-hover table-striped table-sm">
+                    {%  for last in lastProjects %}
                     <thead>
                     <tr>
-                        <th>Projet</th>
-                        <th>Date de création</th>
-                        <th>Prix de vente</th>
-                        <th>Coût</th>
-                        <th>Est livré</th>
+                        <th>Project</th>
+                        <th>Creation date</th>
+                        <th>Selling price</th>
+                        <th>Cost</th>
+                        <th>Is released</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                         <th>
-                            <a href="#">Mon projet</a>
+                            <a href={{path('company_details_project', {'id': last.id})}}>{{ last.name }}</a>
                         </th>
-                        <th>18/03/2018</th>
-                        <th>20 000 €</th>
-                        <th>3 200 €</th>
+                        <th>{{last.created_at|date('d/m/Y') }}</th>
+                        <th>{{last.sellingPrice}}€</th>
+                        <th>{{last.cost}}€</th>
                         <th>
+                            {% if last.releaseDate != null %}
                             <span class="badge badge-success">OUI</span>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="#">Mon projet</a>
-                        </th>
-                        <th>18/03/2018</th>
-                        <th>20 000 €</th>
-                        <th>3 200 €</th>
-                        <th>
-                            <span class="badge badge-success">OUI</span>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="#">Mon projet</a>
-                        </th>
-                        <th>18/03/2018</th>
-                        <th>20 000 €</th>
-                        <th>3 200 €</th>
-                        <th>
-                            <span class="badge badge-success">OUI</span>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="#">Mon projet</a>
-                        </th>
-                        <th>18/03/2018</th>
-                        <th>20 000 €</th>
-                        <th>3 200 €</th>
-                        <th>
-                            <span class="badge badge-success">OUI</span>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <a href="#">Mon projet</a>
-                        </th>
-                        <th>18/03/2018</th>
-                        <th>20 000 €</th>
-                        <th>3 200 €</th>
-                        <th>
-                            <span class="badge badge-danger">NON</span>
+                            {% else %}
+                            <span class=" badge badge-danger">NON</span>
+                            {% endif %}
                         </th>
                     </tr>
                     </tbody>
+                    {% endfor %}
                 </table>
             </div>
         </div>

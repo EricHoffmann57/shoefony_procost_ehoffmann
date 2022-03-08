@@ -58,23 +58,8 @@ class TodoRepository extends ServiceEntityRepository
     public function countEmployeesPerProject(int $id): ?array
     {
         $qb = $this->createQueryBuilder('e')
-            ->select('COUNT(DISTINCT(e.employee)) as number')
+            ->select('COUNT(DISTINCT(e.employee)) as count')
             ->where('e.project = :id')
-            ->setParameter('id', $id)
-        ;
-        try {
-            return $qb->getQuery()->getOneOrNullResult();
-        } catch (NonUniqueResultException $e) {
-            $e;
-        }
-    }
-
-    public function costProductionSingleProject(int $id): ?array
-    {
-        $qb = $this->createQueryBuilder('p')
-            ->select('SUM(DISTINCT(em.cost)) as cost')
-            ->leftJoin(Employee::class, 'em', 'WITH', 'em.id = p.employee')
-            ->where('p.project = :id')
             ->setParameter('id', $id)
         ;
         try {
@@ -117,7 +102,7 @@ class TodoRepository extends ServiceEntityRepository
             ->join(Project::class, "project")
             ->where('p.project = :id')
             ->andWhere("p.employee = employee.id")
-            ->andWhere("project.id = p.project")
+            ->andWhere("p.project = project.id")
             ->setParameter('id', $id)
         ;
         try {
@@ -126,5 +111,20 @@ class TodoRepository extends ServiceEntityRepository
             $e;
         }
     }
+    public function countDevCostAllProjectsSold() : array
+    {
+        $qb = $this->createQueryBuilder('p')
+            ->select('p.id, SUM(employee.dailyCost * todo.devTime) as cost, p.name,p.created_at,p.sellingPrice,p.releaseDate')
+            ->join(Employee::class, "employee")
+            ->join(Todo::class, "todo")
+            ->where('p.id = todo.project')
+            ->andWhere("employee.id = todo.employee")
+            ->andWhere("p.releaseDate IS NOT NULL ")
+            ->groupBy('p.name')
+            ->orderBy('p.created_at', 'DESC')
+            ->setMaxResults(5)
+        ;
 
+        return $qb->getQuery()->getResult();
+    }
 }

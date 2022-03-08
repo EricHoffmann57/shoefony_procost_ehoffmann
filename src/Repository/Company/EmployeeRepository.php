@@ -4,6 +4,7 @@ namespace App\Repository\Company;
 
 use App\Entity\Employee;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -44,6 +45,18 @@ class EmployeeRepository extends ServiceEntityRepository
             $this->_em->flush();
         }
     }
+
+    public function countEmployees(): array{
+        $qb = $this->createQueryBuilder('e')
+            ->select('COUNT(1) as count')
+        ;
+        try {
+            return $qb->getQuery()->getOneOrNullResult();
+        } catch (NonUniqueResultException $e) {
+            $e;
+        }
+    }
+
 
     // /**
     //  * @return Employee[] Returns an array of Employee objects

@@ -42,7 +42,7 @@
                         </tr>
                         <tr>
                             <th>Number of employees</td>
-                            <td>{{ countEmployeesOnTodo.number }}</td>
+                            <td>{{ countEmployeesOnTodo.count }}</td>
                         </tr>
                         <tr>
                             <th>Development time</th>
@@ -112,8 +112,7 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            {{ form_label(delayingProject.devTime, delayingProject.devTime, {'label_attr': {'class': 'control-label col-md-6'}})
-                            }}
+                            {{ form_label(delayingProject.devTime, delayingProject.devTime, {'label_attr': {'class': 'control-label col-md-6'}}) }}
                             <div class="col-md-6">
                                 {{form_widget(delayingProject.devTime, {'attr': {'class': 'form-control' }})}}
                                 <div class="form-control-feedback text-danger">

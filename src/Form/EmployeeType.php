@@ -28,14 +28,17 @@ class EmployeeType extends AbstractType
             ])
             ->add('job', EntityType::class, [
                 'class' => Job::class,
-                'label' => 'Job',
+                'label' => 'Job','attr' => [
+                    'style' => 'margin-bottom:15px;margin-left: 15px; width:500px'],
                 'choice_label' => 'name'
             ])
             ->add('dailyCost', IntegerType::class, [
-                'label' => 'Cost(€)'
+                'label' => 'Cost in (€)','attr' => [
+                    'style' => 'margin-bottom:15px;margin-left: 10px; width:500px'],
             ])
             ->add('hiringDate', DateType::class, [
-                'widget' => 'single_text',
+                'widget' => 'single_text','attr' => [
+                    'style' => 'margin-bottom:15px;margin-left: 10px; width:500px'],
                 'format' => 'yyyy-MM-dd'])
         ;
     }
