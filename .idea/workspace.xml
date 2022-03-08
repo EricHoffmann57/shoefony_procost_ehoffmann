@@ -1,38 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220306142917.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/EmployeeControllers/EmployeeEditController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/JobControllers/JobEditController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/JobControllers/JobFormController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Job.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/JobType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Manager/JobManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/Company/JobRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/company/form_job.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/company/list_jobs.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/messages/message_flash.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony_procost_ehoffmann.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony_procost_ehoffmann.iml" afterDir="false" />
+    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="employees CRUD done&#10;jobs CRUD done">
+      <change afterPath="$PROJECT_DIR$/src/Controller/ProjectControllers/ProjectEditController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/ProjectControllers/ProjectFormController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Project.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Todo.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/DelProjectType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/DelayingProjectType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/EndProjectType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/ProjectType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/TodoType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Manager/ProjectManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Manager/TodoManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/Company/ProjectRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/Company/TodoRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/company/details_project.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/company/form_project.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/company/list_projects.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/controllers.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/controllers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CompanyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/FormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmployeeControllers/EmployeeFormController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Employee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/EmployeeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EmployeeType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/Company/JobRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/JobRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/company/details_employee.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/details_employee.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/form_employee.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/form_employee.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/list_employees.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_employees.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company/list_jobs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_jobs.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
     </list>
@@ -195,7 +186,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/migrations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -228,7 +219,16 @@
       <workItem from="1646566247342" duration="30869000" />
       <workItem from="1646644355777" duration="6716000" />
       <workItem from="1646652730337" duration="27000" />
+      <workItem from="1646652890934" duration="37487000" />
     </task>
+    <task id="LOCAL-00001" summary="employees CRUD done&#10;jobs CRUD done">
+      <created>1646652952133</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646652952133</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,5 +245,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="employees CRUD done&#10;jobs CRUD done" />
+    <option name="LAST_COMMIT_MESSAGE" value="employees CRUD done&#10;jobs CRUD done" />
   </component>
 </project>

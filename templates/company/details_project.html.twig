@@ -1,0 +1,165 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <main class="app-content">
+
+        <div>
+            <h1><i class="fa fa-laptop"></i>{{ project.name }}</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="tile">
+
+                    {{ include('messages/message_flash.html.twig') }}
+                    <table class="table table-striped table-bordered table-sm">
+                        <tbody>
+
+                        <tr>
+                            <th>Projet</td>
+                            <td>{{project.name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Description</td>
+                            <td>{{project.description}}</td>
+                        </tr>
+                        <tr>
+                            <th>Selling price</td>
+                            <td>{{project.sellingPrice}} €</td>
+                        </tr>
+                        <tr>
+                            <th>Creation date</td>
+                            <td>{{project.createdAt|date("d/m/Y")}}</td>
+                        </tr>
+                        <tr>
+                            <th>Release date</td>
+                            {% if project.releaseDate != null %}
+                            <td>{{ project.releaseDate|date("d/m/Y")}}</td>
+                            {% else %}
+                            <td>Pending</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <th>Number of employees</td>
+                            <td>{{ countEmployeesOnTodo.number }}</td>
+                        </tr>
+                        <tr>
+                            <th>Development time</th>
+                            {% if countDevTimeOneProject == null or countDevTimeOneProject < 0 %}
+                               <td> 0</td>
+                            {% else %}
+                            <td>{{ countDevTimeOneProject.time }} days</td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            <th>Development cost</td>
+                            {%  if devCostOneProject != null %}
+                            <td>
+                              {{ devCostOneProject.cost }} €
+                            </td>
+                            {% else %}
+                            <td>0</td>
+                            {%  endif %}
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="btn-group">
+                        {% if project.releaseDate == null %}
+                            <div>
+                                <a href={{path('edit_project', {'id': project.id})}} type="" class="btn btn-info">
+                                <i class="fa fa-pencil"></i>Edit
+                                </a>
+
+                            </div>
+                            <div>
+                                {{ form_start(releaseProject) }}
+                                <button type="submit" class="btn btn-success" name="finish">
+                                    <i class="fa fa-check mr-0"></i>
+                                    Release
+                                </button>
+                                {{ form_end(releaseProject) }}
+                            </div>
+                            <div>
+                                {{ form_start(deleteProject) }}
+                                <button type="submit" class="btn btn-danger" name="delete">
+                                    <i class="fa fa-check mr-0"></i>
+                                    Delete
+                                </button>
+                                {{ form_end(deleteProject) }}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+
+                <div class="tile">
+
+                    <h3 class="title-title mb-4">Add time to project</h3>
+                    {{ include('messages/message_flash.html.twig') }}
+
+                    <div class="form-horizontal">
+                        {{ form_start(delayingProject) }}
+
+                        <div class="form-group row">
+                            {{ form_label(delayingProject.employee, delayingProject.employee, {'label_attr': {'class': 'control-label col-md-6'}}) }}
+                            <div class="col-md-6">
+                                {{form_widget(delayingProject.employee, {'attr': {'class': 'form-control' }})}}
+                                <div class="form-control-feedback text-danger">
+                                    {{form_errors(delayingProject.employee)}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            {{ form_label(delayingProject.devTime, delayingProject.devTime, {'label_attr': {'class': 'control-label col-md-6'}})
+                            }}
+                            <div class="col-md-6">
+                                {{form_widget(delayingProject.devTime, {'attr': {'class': 'form-control' }})}}
+                                <div class="form-control-feedback text-danger">
+                                    {{form_errors(delayingProject.devTime)}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="offset-md-6 col-md-8">
+                                <button type="submit" class="btn btn-success" {% if project.releaseDate != null %} disabled
+                                        {% endif %}><i class="fa fa-save"></i>Save</button>
+                            </div>
+                        </div>
+                        {{ form_end(delayingProject) }}
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="tile pb-5">
+                    <h3 class="tile-title">Productivity history</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-sm">
+                            <thead>
+                            <tr>
+                                <th>Full name</th>
+                                <th>Time</th>
+                                <th>Starting date</th>
+                                <th>Development cost</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for todo in allTodos %}
+                                <tr>
+                                    <td>{{todo.employee.firstName|capitalize}} {{todo.employee.lastName|upper}}</td>
+                                    <td>{{todo.devTime}} days</td>
+                                    <td>{{todo.released|date("d/m/Y") }}</td>
+                                    <td>{{todo.devTime * todo.employee.dailyCost }}€</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

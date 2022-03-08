@@ -29,19 +29,19 @@
             <li>
                 <a class="app-menu__item {{ current_route is same as 'main_homepage' ? 'active' }}" href="{{ path('main_homepage') }}">
                     <i class="app-menu__icon fa fa-dashboard"></i>
-                    <span class="app-menu__label">Dashboard</span>
+                    <span class="app-menu__label">&nbspDashboard</span>
                 </a>
             </li>
             <li>
-                <a class="app-menu__item class=" href="list.html">
+                <a class="app-menu__item {{ current_route is same as 'company_list_projects' ? 'active' }}" href="{{ path('company_list_projects') }}">
                     <i class="app-menu__icon fa fa-laptop"></i>
-                    <span class="app-menu__label">Projects</span>
+                    <span class="app-menu__label">&nbspProjects</span>
                 </a>
             </li>
             <li>
                 <a class="app-menu__item {{ current_route is same as 'company_list_employees' ? 'active' }}" href="{{ path('company_list_employees') }}">
                     <i class="app-menu__icon fa fa-users"></i>
-                    <span class="app-menu__label">Employees</span>
+                    <span class="app-menu__label">&nbspEmployees</span>
                 </a>
             </li>
             <li>
