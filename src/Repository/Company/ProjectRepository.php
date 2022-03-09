@@ -36,7 +36,7 @@ class ProjectRepository extends ServiceEntityRepository
     public function getPendingProjects(): array
     {
         $qb = $this->createQueryBuilder('p')
-            ->select('COUNT(1) as projects')
+            ->select('COUNT(p.id) as projects')
             ->where("p.releaseDate IS NULL ")
         ;
         try {
@@ -49,7 +49,7 @@ class ProjectRepository extends ServiceEntityRepository
     public function getReleasedProjects(): array
     {
         $qb = $this->createQueryBuilder('p')
-            ->select('COUNT(1) as projects')
+            ->select('COUNT(p.id) as projects')
             ->where("p.releaseDate IS NOT NULL ")
         ;
         try {

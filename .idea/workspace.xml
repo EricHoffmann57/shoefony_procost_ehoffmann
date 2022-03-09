@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="rentability and released gauges are updated in real time!">
+    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="update on too optimistic rentability :)">
+      <change afterPath="$PROJECT_DIR$/public/img/alex.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Company/TodoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/TodoRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/Company/ProjectRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/ProjectRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company/list_employees.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_employees.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company/list_jobs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_jobs.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company/list_projects.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_projects.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,6 +180,7 @@
       <recent name="C:\Users\rickd\Documents\shoefony_procost_ehoffmann\migrations" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rickd\Documents\symfony_procost_ehoffmann\public\img" />
       <recent name="C:\Users\rickd\Documents\shoefony_procost_ehoffmann\src\Controller\EmployeeControllers" />
       <recent name="C:\Users\rickd\Documents\shoefony_procost_ehoffmann\src\Controller\JobControllers" />
       <recent name="C:\Users\rickd\Documents\shoefony_procost_ehoffmann\src\Repository\Company" />
@@ -201,7 +205,7 @@
       <workItem from="1646566247342" duration="30869000" />
       <workItem from="1646644355777" duration="6716000" />
       <workItem from="1646652730337" duration="27000" />
-      <workItem from="1646652890934" duration="73470000" />
+      <workItem from="1646652890934" duration="77941000" />
     </task>
     <task id="LOCAL-00001" summary="employees CRUD done&#10;jobs CRUD done">
       <created>1646652952133</created>
@@ -231,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646820186458</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update on too optimistic rentability :)">
+      <created>1646831724814</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1646831724814</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +265,7 @@
     <MESSAGE value="added project and todo&#10;employee_details &amp; project_details done" />
     <MESSAGE value="dashboard almost done !" />
     <MESSAGE value="rentability and released gauges are updated in real time!" />
-    <option name="LAST_COMMIT_MESSAGE" value="rentability and released gauges are updated in real time!" />
+    <MESSAGE value="update on too optimistic rentability :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update on too optimistic rentability :)" />
   </component>
 </project>

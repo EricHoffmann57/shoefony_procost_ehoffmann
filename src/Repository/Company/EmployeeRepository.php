@@ -51,58 +51,37 @@ class EmployeeRepository extends ServiceEntityRepository
     public function countEmployees(): array
     {
         $qb = $this->createQueryBuilder('e')
-            ->select('COUNT(1) as count')
-        ;
+            ->select('COUNT(e.id) as count');
         try {
             return $qb->getQuery()->getOneOrNullResult();
         } catch (NonUniqueResultException $e) {
             $e;
         }
     }
+
     public function getLastDevTimes(): array
     {
         $qb = $this->createQueryBuilder('e')
             ->select("e.id, e.lastName, e.firstName, project.id as projectID, project.name,project.created_at,todo.devTime")
             ->join(Project::class, 'project')
             ->join(Todo::class, 'todo')
-            ->join(Employee::class,'employee')
+            ->join(Employee::class, 'employee')
             ->where("employee.id = todo.employee")
             ->andWhere('e.id = todo.employee')
             ->andWhere('todo.project = project.id')
             ->orderBy('project.created_at', 'DESC')
-            ->setMaxResults(10)
-        ;
+            ->setMaxResults(10);
 
         return $qb->getQuery()->getResult();
     }
 
-
-    // /**
-    //  * @return Employee[] Returns an array of Employee objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function bestWorker()
     {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('e.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $qb = $this->createQueryBuilder('e')
+            ->select("e.id, e.lastName, e.firstName, e.hiringDate, MAX(e.dailyCost * todo.devTime) as maxCost")
+            ->join(Todo::class, 'todo')
+            ->where("e.id = todo.employee ")
+            ->orderBy('maxCost', 'DESC');
+        return $qb->getQuery()->getResult();
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Employee
-    {
-        return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }
