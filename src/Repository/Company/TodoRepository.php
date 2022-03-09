@@ -111,20 +111,4 @@ class TodoRepository extends ServiceEntityRepository
             $e;
         }
     }
-    public function countDevCostAllProjectsSold() : array
-    {
-        $qb = $this->createQueryBuilder('p')
-            ->select('p.id, SUM(employee.dailyCost * todo.devTime) as cost, p.name,p.created_at,p.sellingPrice,p.releaseDate')
-            ->join(Employee::class, "employee")
-            ->join(Todo::class, "todo")
-            ->where('p.id = todo.project')
-            ->andWhere("employee.id = todo.employee")
-            ->andWhere("p.releaseDate IS NOT NULL ")
-            ->groupBy('p.name')
-            ->orderBy('p.created_at', 'DESC')
-            ->setMaxResults(5)
-        ;
-
-        return $qb->getQuery()->getResult();
-    }
 }

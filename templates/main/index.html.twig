@@ -1,16 +1,17 @@
 {% extends 'layout.html.twig' %}
   {% set rentability = 0 %}
+  {% set devCost = 0 %}
+  {% set projectsSold = 0 %}
     {% for last in totalCost %}
-        {% if last.releaseDate != null  and (last.sellingPrice - last.cost) > 0%}
-            {% set rentability = (rentability + last.cost)  %}
+        {% if last.releaseDate != null %}
+            {% set devCost = (devCost + last.cost)  %}
+            {% set projectsSold = (projectsSold + last.sellingPrice) %}
         {% endif %}
     {% endfor %}
-    {% set rentability = 100 - ((rentability * 100)/totalSell.sell) %}
+    {% set rentability = 100 - ((devCost * 100)/projectsSold) %}
 {% set total = (released.projects /(released.projects + pending.projects))*100 %}
 {% block content %}
-
 <main class="app-content">
-
     <div class="app-title">
         <div>
             <h1><i class="fa fa-dashboard"></i>&nbspDashboard</h1>
@@ -156,32 +157,22 @@
         </div>
         <div class="col-md-3">
             <div class="tile">
-                <h2 class="tile-title text-center">Temps de production</h2>
+                <h2 class="tile-title text-center">Last production time</h2>
                 <ul class="list-group">
-                    <li class="list-group-item">
-                        <a href="#">James Brown</a> a travaillé sur <a href="#">Projet 1</a>
-                        <div class="text-muted font-italic text-right">4 jours</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#">James Brown</a> a travaillé sur <a href="#">Projet 1</a>
-                        <div class="text-muted font-italic text-right">4 jours</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#">James Brown</a> a travaillé sur <a href="#">Projet 1</a>
-                        <div class="text-muted font-italic text-right">4 jours</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#">James Brown</a> a travaillé sur <a href="#">Projet 1</a>
-                        <div class="text-muted font-italic text-right">4 jours</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#">James Brown</a> a travaillé sur <a href="#">Projet 1</a>
-                        <div class="text-muted font-italic text-right">4 jours</div>
-                    </li>
-                    <li class="list-group-item">
-                        <a href="#">James Brown</a> a travaillé sur <a href="#">Projet 1</a>
-                        <div class="text-muted font-italic text-right">4 jours</div>
-                    </li>
+                    {% for time in lastDevTimes %}
+                        <li class="list-group-item">
+                            <a href={{path('company_details_employee', {'id': time.id})}}>{{time.firstName|capitalize}}
+                                {{time.lastName|upper}}</a> worked on&nbsp;<a
+                                    href={{path('company_details_project', {'id': time.projectID})}}>{{time.name}}</a>
+                            <div class="text-muted font-italic text-right">{{time.devTime}}
+                                {% if time.devTime > 1 %}
+                                    days
+                                {% else %}
+                                    day
+                                {% endif %}
+                            </div>
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>

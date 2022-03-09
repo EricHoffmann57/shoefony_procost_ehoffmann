@@ -3,6 +3,8 @@
 namespace App\Repository\Company;
 
 use App\Entity\Employee;
+use App\Entity\Project;
+use App\Entity\Todo;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
@@ -46,7 +48,8 @@ class EmployeeRepository extends ServiceEntityRepository
         }
     }
 
-    public function countEmployees(): array{
+    public function countEmployees(): array
+    {
         $qb = $this->createQueryBuilder('e')
             ->select('COUNT(1) as count')
         ;
@@ -55,6 +58,22 @@ class EmployeeRepository extends ServiceEntityRepository
         } catch (NonUniqueResultException $e) {
             $e;
         }
+    }
+    public function getLastDevTimes(): array
+    {
+        $qb = $this->createQueryBuilder('e')
+            ->select("e.id, e.lastName, e.firstName, project.id as projectID, project.name,project.created_at,todo.devTime")
+            ->join(Project::class, 'project')
+            ->join(Todo::class, 'todo')
+            ->join(Employee::class,'employee')
+            ->where("employee.id = todo.employee")
+            ->andWhere('e.id = todo.employee')
+            ->andWhere('todo.project = project.id')
+            ->orderBy('project.created_at', 'DESC')
+            ->setMaxResults(10)
+        ;
+
+        return $qb->getQuery()->getResult();
     }
 
 

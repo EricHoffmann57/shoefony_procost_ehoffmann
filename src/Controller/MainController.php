@@ -35,6 +35,7 @@ final class MainController extends AbstractController
         $lastProjects = $this->projectRepository->findLastProjects();
         $soldProjects = $this->projectRepository->countDevCostAllProjectsSold();
         $totalSell = $this->projectRepository->countSellingAllProjects();
+        $lastDevTimes = $this->employeeRepository->getLastDevTimes();
 
         return $this->render('main/index.html.twig', [
            'countEmployees' => $countEmployees,
@@ -43,7 +44,8 @@ final class MainController extends AbstractController
             'allDevTime' => $countDevTimeAllProjects,
             'lastProjects' => $lastProjects,
              'totalCost' => $soldProjects,
-            'totalSell' => $totalSell
+            'totalSell' => $totalSell,
+            'lastDevTimes' => $lastDevTimes
         ]);
     }
 }
