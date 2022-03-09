@@ -1,8 +1,16 @@
 {% extends 'layout.html.twig' %}
-
+  {% set rentability = 0 %}
+    {% for last in totalCost %}
+        {% if last.releaseDate != null  and (last.sellingPrice - last.cost) > 0%}
+            {% set rentability = (rentability + last.cost)  %}
+        {% endif %}
+    {% endfor %}
+    {% set rentability = 100 - ((rentability * 100)/totalSell.sell) %}
+{% set total = (released.projects /(released.projects + pending.projects))*100 %}
 {% block content %}
 
 <main class="app-content">
+
     <div class="app-title">
         <div>
             <h1><i class="fa fa-dashboard"></i>&nbspDashboard</h1>
@@ -64,13 +72,7 @@
                         <div class="card-header text-center">Rentability</div>
                         <div class="card-body">
                             <p class="text-muted">
-                                {% set rentability = 0 %}
-                                {% for last in totalCost %}
-                                    {% if last.releaseDate != null %}
-                                {% set rentability = (rentability + last.cost)  %}
-                                    {% endif %}
-                                {% endfor %}
-                                {% set rentability = 100 - ((rentability * 100)/totalSell.sell) %}
+
                                 <i class="fa fa-database mr-2 text-primary"></i> {{ rentability|round(0,'floor') }}% RENTABILITY
                             </p>
                             <div class="embed-responsive embed-responsive-16by9">
@@ -81,10 +83,10 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card text-uppercase">
-                        <div class="card-header text-center">Taux de livraison</div>
+                        <div class="card-header text-center">Percentage of released projects</div>
                         <div class="card-body">
                             <p class="text-muted">
-                                {% set total = (released.projects /(released.projects + pending.projects))*100 %}
+
                                 <i class="fa fa fa-check-square-o mr-2 text-primary"></i> {{ total|round(0,'floor') }}% Released
                             </p>
                             <div class="embed-responsive embed-responsive-16by9">
@@ -141,9 +143,9 @@
                         <th>{{last.cost}}€</th>
                         <th>
                             {% if last.releaseDate != null %}
-                            <span class="badge badge-success">OUI</span>
+                            <span class="badge badge-success">YES</span>
                             {% else %}
-                            <span class=" badge badge-danger">NON</span>
+                            <span class=" badge badge-danger">NO</span>
                             {% endif %}
                         </th>
                     </tr>
@@ -188,6 +190,13 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js" integrity="sha256-oSgtFCCmHWRPQ/JmR4OoZ3Xke1Pw4v50uh6pLcu+fIc=" crossorigin="anonymous"></script>
+    <script>
+        var sell = "{{ rentability }}"
+        var cost = "{{ total }}"
+        var ratioData = [sell, (100-sell)];
+        var deliveredData = [cost , (100-cost)];
+    </script>
     <!-- dashboard-->
     <script src="./js/dashboard.js"></script>
 {% endblock %}

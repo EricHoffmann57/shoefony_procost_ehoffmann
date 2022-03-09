@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="added project and todo&#10;employee_details &amp; project_details done">
+    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="dashboard almost done !">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/EmployeeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/EmployeeType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ProjectType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProjectType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Company/ProjectRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/ProjectRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Company/TodoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/TodoRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/details_project.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/details_project.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/form_employee.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/form_employee.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/form_job.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/form_job.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -206,7 +198,7 @@
       <workItem from="1646566247342" duration="30869000" />
       <workItem from="1646644355777" duration="6716000" />
       <workItem from="1646652730337" duration="27000" />
-      <workItem from="1646652890934" duration="58903000" />
+      <workItem from="1646652890934" duration="66427000" />
     </task>
     <task id="LOCAL-00001" summary="employees CRUD done&#10;jobs CRUD done">
       <created>1646652952133</created>
@@ -222,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646750739798</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="dashboard almost done !">
+      <created>1646780107956</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1646780107956</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +242,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="employees CRUD done&#10;jobs CRUD done" />
     <MESSAGE value="added project and todo&#10;employee_details &amp; project_details done" />
-    <option name="LAST_COMMIT_MESSAGE" value="added project and todo&#10;employee_details &amp; project_details done" />
+    <MESSAGE value="dashboard almost done !" />
+    <option name="LAST_COMMIT_MESSAGE" value="dashboard almost done !" />
   </component>
 </project>
