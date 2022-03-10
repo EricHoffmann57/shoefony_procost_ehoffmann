@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="fixtures added, minor corrections">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220307182114.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20220308002434.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Employee.php" afterDir="false" />
+    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="fixtures loaded for testing purpose&#10;some bugs corrections">
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +198,7 @@
       <workItem from="1646644355777" duration="6716000" />
       <workItem from="1646652730337" duration="27000" />
       <workItem from="1646652890934" duration="108042000" />
-      <workItem from="1646905766882" duration="21001000" />
+      <workItem from="1646905766882" duration="21229000" />
     </task>
     <task id="LOCAL-00001" summary="employees CRUD done&#10;jobs CRUD done">
       <created>1646652952133</created>
@@ -264,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646934495135</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fixtures loaded for testing purpose&#10;some bugs corrections">
+      <created>1646946213581</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1646946213581</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +290,7 @@
     <MESSAGE value="dashboard finished!" />
     <MESSAGE value="added del button for jobs not linked to an employee!" />
     <MESSAGE value="fixtures added, minor corrections" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixtures added, minor corrections" />
+    <MESSAGE value="fixtures loaded for testing purpose&#10;some bugs corrections" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixtures loaded for testing purpose&#10;some bugs corrections" />
   </component>
 </project>
