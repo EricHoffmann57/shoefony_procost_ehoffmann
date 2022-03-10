@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="fixtures loaded for testing purpose&#10;some bugs corrections">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +174,7 @@
       <recent name="C:\Users\rickd\Documents\shoefony_procost_ehoffmann\migrations" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rickd\Documents\symfony_procost_ehoffmann\assets" />
       <recent name="C:\Users\rickd\Documents\symfony_procost_ehoffmann\public\img" />
       <recent name="C:\Users\rickd\Documents\shoefony_procost_ehoffmann\src\Controller\EmployeeControllers" />
       <recent name="C:\Users\rickd\Documents\shoefony_procost_ehoffmann\src\Controller\JobControllers" />
@@ -198,7 +201,7 @@
       <workItem from="1646644355777" duration="6716000" />
       <workItem from="1646652730337" duration="27000" />
       <workItem from="1646652890934" duration="108042000" />
-      <workItem from="1646905766882" duration="21229000" />
+      <workItem from="1646905766882" duration="24918000" />
     </task>
     <task id="LOCAL-00001" summary="employees CRUD done&#10;jobs CRUD done">
       <created>1646652952133</created>
@@ -263,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646946213581</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fixtures loaded for testing purpose&#10;some bugs corrections">
+      <created>1646946246494</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1646946246494</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
