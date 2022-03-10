@@ -39,6 +39,7 @@ class Employee
     private ?string $dailyCost = null;
 
     #[ORM\Column(type: 'datetime')]
+    #[Assert\NotBlank(message: 'this field cannot be empty')]
     private \datetimeInterface $hiringDate;
 
     public function getId(): ?int
@@ -114,5 +115,6 @@ class Employee
     public function setHiringDate(\DateTimeInterface $hiringDate):self
     {
         $this->hiringDate = $hiringDate;
+        return $this;
     }
 }

@@ -1,7 +1,7 @@
 {% extends 'layout.html.twig' %}
-  {% set rentability = 0 %}
-  {% set devCost = 0 %}
-  {% set projectsSold = 0 %}
+  {% set rentability = 1 %}
+  {% set devCost = 1 %}
+  {% set projectsSold = 1 %}
     {% for last in totalCost %}
         {% if last.releaseDate != null %}
             {% set devCost = (devCost + last.cost)  %}

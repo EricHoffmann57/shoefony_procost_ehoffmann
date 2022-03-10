@@ -75,6 +75,11 @@ class AppFixtures extends Fixture
             'firstName' => "Rick",
             'lastName' => "Hunter",
             "email" => "macross.sdf1@yahoo.co.jp",
+        ],
+        [
+            'firstName' => "Lisa",
+            'lastName' => "Hayes",
+            "email" => "black.velvet@yahoo.co.jp",
         ]
     ]
     ;
