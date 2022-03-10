@@ -6,18 +6,18 @@
         <div class="tile">
             {{ include('messages/message_flash.html.twig') }}
             <div class="form-horizontal">
-                {{ form_start(form) }}
+                {{ form_start(delJob) }}
                 <section>
-                    <h3>Create/Edit job</h3>
+                    <h3>Delete Job</h3>
                     <div class="row mt-4">
                         <div class="offset-md-4 col-md-8">
                             <div class="form-group row">
-                                {{ form_label(form.name, form.name, {'label_attr': {'class': 'control-label col-md-3'}})
+                                {{ form_label(delJob.name, delJob.name, {'label_attr': {'class': 'control-label col-md-3'}})
                                 }}
                                 <div class="col-md-8">
-                                    {{form_widget(form.name, {'attr': {'class': 'form-control', 'placeholder': 'Example: Web developer'}})}}
+                                    {{form_widget(delJob.name, {'attr': {'class': 'form-control', 'placeholder': 'Example: Web developer'}})}}
                                     <div class="form-control-feedback text-danger">
-                                        {{form_errors(form.name)}}
+                                        {{form_errors(delJob.name)}}
                                     </div>
                                 </div>
                             </div>
@@ -29,11 +29,11 @@
 
                 <div class="row">
                     <div class="offset-md-6 col-md-6">
-                        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>Save</button>
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-delete"></i>Delete</button>
                     </div>
                 </div>
 
-                {{ form_end(form) }}
+                {{ form_end(delJob) }}
             </div>
         </div>
     </main>

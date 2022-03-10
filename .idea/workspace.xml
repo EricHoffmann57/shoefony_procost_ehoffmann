@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="update on too optimistic rentability :)">
-      <change afterPath="$PROJECT_DIR$/public/img/alex.jpg" afterDir="false" />
+    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="dashboard finished!">
+      <change afterPath="$PROJECT_DIR$/src/Controller/JobControllers/JobDelController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/DelJobType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/company/form_job_delete.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CompanyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/JobControllers/JobFormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JobControllers/JobFormController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Company/ProjectRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/ProjectRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/list_employees.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_employees.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/Company/JobRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/JobRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company/details_project.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/details_project.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company/form_job.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/form_job.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/company/list_jobs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_jobs.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/company/list_projects.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_projects.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
@@ -205,7 +209,8 @@
       <workItem from="1646566247342" duration="30869000" />
       <workItem from="1646644355777" duration="6716000" />
       <workItem from="1646652730337" duration="27000" />
-      <workItem from="1646652890934" duration="77941000" />
+      <workItem from="1646652890934" duration="108042000" />
+      <workItem from="1646905766882" duration="3029000" />
     </task>
     <task id="LOCAL-00001" summary="employees CRUD done&#10;jobs CRUD done">
       <created>1646652952133</created>
@@ -242,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646831724814</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="dashboard finished!">
+      <created>1646837057932</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1646837057932</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +278,7 @@
     <MESSAGE value="dashboard almost done !" />
     <MESSAGE value="rentability and released gauges are updated in real time!" />
     <MESSAGE value="update on too optimistic rentability :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update on too optimistic rentability :)" />
+    <MESSAGE value="dashboard finished!" />
+    <option name="LAST_COMMIT_MESSAGE" value="dashboard finished!" />
   </component>
 </project>

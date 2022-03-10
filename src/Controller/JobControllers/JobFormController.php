@@ -20,7 +20,7 @@ class JobFormController extends AbstractController
     }
 
     #[Route('/company/form_job', name: 'company_form_job', methods: ['GET','POST'])]
-    public function formEmployee(Request $request): Response
+    public function formJob(Request $request): Response
     {
         $job = new Job();
         $form = $this->createForm(JobType::class, $job);

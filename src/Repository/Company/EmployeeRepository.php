@@ -81,7 +81,9 @@ class EmployeeRepository extends ServiceEntityRepository
             ->select("e.id, e.lastName, e.firstName, e.hiringDate, MAX(e.dailyCost * todo.devTime) as maxCost")
             ->join(Todo::class, 'todo')
             ->where("e.id = todo.employee ")
-            ->orderBy('maxCost', 'DESC');
+            ->orderBy('maxCost', 'DESC')
+        ;
         return $qb->getQuery()->getResult();
     }
+
 }

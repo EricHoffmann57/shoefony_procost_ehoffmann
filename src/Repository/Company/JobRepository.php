@@ -4,6 +4,7 @@
 namespace App\Repository\Company;
 
 
+use App\Entity\Employee;
 use App\Entity\Job;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -48,5 +49,13 @@ class JobRepository extends ServiceEntityRepository
             $this->_em->flush();
         }
     }
-
+    public function deleteJob(): array
+    {
+        $qb = $this->createQueryBuilder('j')
+            ->select('j.id, j.name, employee.id as employeeID')
+            ->join(Employee::class,'employee')
+            ->where('j.id = employee.job')
+        ;
+        return $qb->getQuery()->getResult();
+    }
 }

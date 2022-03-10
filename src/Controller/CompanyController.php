@@ -8,7 +8,9 @@ use App\Entity\Todo;
 use App\Form\DelayingProjectType;
 use App\Form\DelProjectType;
 use App\Form\EndProjectType;
+use App\Form\JobType;
 use App\Form\TodoType;
+use App\Manager\JobManager;
 use App\Manager\TodoManager;
 use App\Manager\ProjectManager;
 use App\Repository\Company\EmployeeRepository;
@@ -32,6 +34,7 @@ class CompanyController extends AbstractController
         private TodoRepository $todoRepository,
         private ProjectManager $projectManager,
         private TodoManager $todoManager,
+        private JobManager $jobManager,
     ) {
         $this->date = new \DateTime('now');
     }
@@ -82,13 +85,21 @@ class CompanyController extends AbstractController
 
     }
     // jobs list
-    #[Route('/company/jobs', name: 'company_list_jobs')]
-    public function listJobs(): Response
+    #[Route('/company/jobs', name: 'company_list_jobs' )]
+    public function listJobs(Request $request): Response
     {
         $jobs = $this->jobRepository->findAll();
-        return $this->render('company/list_jobs.html.twig', [
-            'jobs' => $jobs,
-        ]);
+        foreach ($jobs as $job) {
+            $job->getId();
+
+            $deleteJob = $this->jobRepository->deleteJob();
+
+            return $this->render('company/list_jobs.html.twig', [
+                'jobs' => $jobs,
+                'deleteJob' => $deleteJob,
+                //'delJob' => $delJob->createView(),
+            ]);
+        }
     }
 
     // projects list and details per project
