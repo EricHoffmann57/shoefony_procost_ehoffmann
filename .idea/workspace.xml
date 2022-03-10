@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="dashboard finished!">
-      <change afterPath="$PROJECT_DIR$/src/Controller/JobControllers/JobDelController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/DelJobType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/company/form_job_delete.html.twig" afterDir="false" />
+    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="added del button for jobs not linked to an employee!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CompanyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/JobControllers/JobFormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JobControllers/JobFormController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Company/JobRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/JobRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/details_project.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/details_project.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/form_job.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/form_job.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/list_jobs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_jobs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/list_projects.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_projects.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Employee.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Employee.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +200,7 @@
       <workItem from="1646644355777" duration="6716000" />
       <workItem from="1646652730337" duration="27000" />
       <workItem from="1646652890934" duration="108042000" />
-      <workItem from="1646905766882" duration="3029000" />
+      <workItem from="1646905766882" duration="14352000" />
     </task>
     <task id="LOCAL-00001" summary="employees CRUD done&#10;jobs CRUD done">
       <created>1646652952133</created>
@@ -254,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646837057932</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added del button for jobs not linked to an employee!">
+      <created>1646909013891</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1646909013892</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +276,7 @@
     <MESSAGE value="rentability and released gauges are updated in real time!" />
     <MESSAGE value="update on too optimistic rentability :)" />
     <MESSAGE value="dashboard finished!" />
-    <option name="LAST_COMMIT_MESSAGE" value="dashboard finished!" />
+    <MESSAGE value="added del button for jobs not linked to an employee!" />
+    <option name="LAST_COMMIT_MESSAGE" value="added del button for jobs not linked to an employee!" />
   </component>
 </project>

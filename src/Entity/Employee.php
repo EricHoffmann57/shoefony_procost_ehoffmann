@@ -111,7 +111,7 @@ class Employee
     }
 
 
-    public function setHiringDate(\DateTimeInterface $hiringDate): void
+    public function setHiringDate(\DateTimeInterface $hiringDate):self
     {
         $this->hiringDate = $hiringDate;
     }
