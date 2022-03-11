@@ -15,6 +15,7 @@
                 <li class="breadcrumb-item">Employees</li>
             </ul>
         </div>
+        {{ include('messages/message_flash.html.twig') }}
         <div class="tile pb-5">
             <a href={{path('company_form_project')}} type="" class="btn btn-primary float-right mb-4"><i
                     class="fa fa-plus-circle mr-2"></i>Add a project
@@ -59,26 +60,10 @@
                 </table>
             </div>
             <hr />
-            <nav class="float-right">
-                <ul class="pagination">
-                    <li class="page-item disabled">
-                        <span class="page-link">&laquo;</span>
-                    </li>
-                    <li class="page-item active" aria-current="page">
-                        <span class="page-link">1<span class="sr-only">(current)</span></span>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                    </li>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">&raquo;</a>
-                    </li>
-                </ul>
-            </nav>
+            <div class=" d-flex justify-content-center">
+                {%  do projects.setPageRange(5) %}
+                {{ knp_pagination_render(projects, 'main/pagination.html.twig') }}
+            </div>
         </div>
     </main>
 {% endblock %}

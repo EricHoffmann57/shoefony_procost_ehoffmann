@@ -8,7 +8,6 @@ use App\Entity\Todo;
 use App\Form\DelayingProjectType;
 use App\Form\DelProjectType;
 use App\Form\EndProjectType;
-use App\Form\JobType;
 use App\Form\TodoType;
 use App\Manager\JobManager;
 use App\Manager\TodoManager;
@@ -17,6 +16,7 @@ use App\Repository\Company\EmployeeRepository;
 use App\Repository\Company\JobRepository;
 use App\Repository\Company\ProjectRepository;
 use App\Repository\Company\TodoRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -40,10 +40,13 @@ class CompanyController extends AbstractController
     }
     // employees list and details per employee
     #[Route('/company/employees', name: 'company_list_employees')]
-    public function listEmployees(): Response
+    public function listEmployees(PaginatorInterface $paginator, Request $request): Response
     {
-
-        $employees = $this->employeeRepository->findAll();
+        $data = $this->employeeRepository->findBy([], ['hiringDate' => 'DESC']);
+        $employees = $paginator->paginate(
+            $data,
+            $request->query->getInt('page', 1),10
+        );
         return $this->render('company/list_employees.html.twig', [
             'employees' => $employees,
         ]);
@@ -86,9 +89,13 @@ class CompanyController extends AbstractController
     }
     // jobs list
     #[Route('/company/jobs', name: 'company_list_jobs' )]
-    public function listJobs(Request $request): Response
+    public function listJobs(PaginatorInterface $paginator,Request $request): Response
     {
-        $jobs = $this->jobRepository->findAll();
+        $data = $this->jobRepository->findBy([], ['id' => 'DESC']);;
+        $jobs = $paginator->paginate(
+            $data,
+            $request->query->getInt('page', 1),10
+        );
         foreach ($jobs as $job) {
             $job->getId();
 
@@ -104,9 +111,13 @@ class CompanyController extends AbstractController
 
     // projects list and details per project
     #[Route('/company/projects', name: 'company_list_projects')]
-    public function listProjects(): Response
+    public function listProjects(PaginatorInterface $paginator, Request $request): Response
     {
-        $projects = $this->projectRepository->findAll();
+        $data = $this->projectRepository->findBy([], ['created_at' => 'DESC']);
+        $projects = $paginator->paginate(
+            $data,
+            $request->query->getInt('page', 1),10
+        );
         return $this->render('company/list_projects.html.twig', [
             'projects' => $projects,
         ]);
@@ -150,7 +161,7 @@ class CompanyController extends AbstractController
             if($todo->getProject()->getReleaseDate() != null){
                 $this->addFlash('danger', 'Project has been definitely released');
             }else{
-                $this->addFlash('success', 'Additional time has been added to project');
+                $this->addFlash('success', 'Another employee has joined project!');
                 $this->todoManager->save($todo);
             }
         }

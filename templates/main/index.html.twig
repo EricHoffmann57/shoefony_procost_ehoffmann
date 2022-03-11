@@ -3,10 +3,10 @@
   {% set devCost = 1 %}
   {% set projectsSold = 1 %}
     {% for last in totalCost %}
-        {% if last.releaseDate != null %}
+
             {% set devCost = (devCost + last.cost)  %}
             {% set projectsSold = (projectsSold + last.sellingPrice) %}
-        {% endif %}
+
     {% endfor %}
     {% set rentability = 100 - ((devCost * 100)/projectsSold) %}
 {% set total = (released.projects /(released.projects + pending.projects))*100 %}
@@ -103,7 +103,7 @@
                             {% for best in bestWorker %}
                             {% if best.maxCost %}
                             <div class="text-center">
-                                <img src="../../../img/Alex.jpg" class="rounded-circle" width="58">
+                                <img src="{{('img/Alex.jpg') }}" class="rounded-circle" width="58">
                                 <p class="mt-2">
                                     <strong>{{ best.firstName }}&nbsp;"the Boss"&nbsp;{{ best.lastName }}</strong>
                                 </p>

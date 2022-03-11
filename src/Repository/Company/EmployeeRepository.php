@@ -69,7 +69,7 @@ class EmployeeRepository extends ServiceEntityRepository
             ->where("employee.id = todo.employee")
             ->andWhere('e.id = todo.employee')
             ->andWhere('todo.project = project.id')
-            ->orderBy('project.created_at', 'DESC')
+            ->orderBy('todo.id', 'DESC')
             ->setMaxResults(10);
 
         return $qb->getQuery()->getResult();

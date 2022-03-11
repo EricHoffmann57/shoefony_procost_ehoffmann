@@ -23,6 +23,11 @@ class JobEditController extends AbstractController{
     public function projectsCreatePage(int $id, Request $request): Response
     {
         $job = $this->jobRepository->find($id);
+        if ($job === null) {
+            return $this->redirectToRoute('company_list_jobs', [
+            ], Response::HTTP_MOVED_PERMANENTLY);
+        }
+
         $form = $this->createForm(JobType::class, $job);
         $form->handleRequest($request);
 

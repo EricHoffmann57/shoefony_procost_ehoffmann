@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="fixtures loaded for testing purpose&#10;some bugs corrections">
+    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="minor changes">
+      <change afterPath="$PROJECT_DIR$/templates/main/pagination.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony_procost_ehoffmann.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony_procost_ehoffmann.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CompanyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/JobControllers/JobDelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JobControllers/JobDelController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/JobControllers/JobEditController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JobControllers/JobEditController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company/details_employee.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/details_employee.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company/details_project.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/details_project.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company/list_employees.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_employees.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company/list_jobs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_jobs.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/company/list_projects.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_projects.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -151,6 +166,8 @@
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="25ntQxDUrh1Y8BVyhvtucKCy4gx" />
@@ -201,7 +218,7 @@
       <workItem from="1646644355777" duration="6716000" />
       <workItem from="1646652730337" duration="27000" />
       <workItem from="1646652890934" duration="108042000" />
-      <workItem from="1646905766882" duration="24918000" />
+      <workItem from="1646905766882" duration="39197000" />
     </task>
     <task id="LOCAL-00001" summary="employees CRUD done&#10;jobs CRUD done">
       <created>1646652952133</created>
@@ -273,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646946246494</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="minor changes">
+      <created>1646950121218</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1646950121218</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,6 +325,7 @@
     <MESSAGE value="added del button for jobs not linked to an employee!" />
     <MESSAGE value="fixtures added, minor corrections" />
     <MESSAGE value="fixtures loaded for testing purpose&#10;some bugs corrections" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixtures loaded for testing purpose&#10;some bugs corrections" />
+    <MESSAGE value="minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor changes" />
   </component>
 </project>
