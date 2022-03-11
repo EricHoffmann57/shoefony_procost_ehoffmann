@@ -103,7 +103,7 @@
                             {% for best in bestWorker %}
                             {% if best.maxCost %}
                             <div class="text-center">
-                                <img src="{{('img/Alex.jpg') }}" class="rounded-circle" width="58">
+                                <img src="{{asset('img/Alex.jpg') }}" class="rounded-circle" width="58">
                                 <p class="mt-2">
                                     <strong>{{ best.firstName }}&nbsp;"the Boss"&nbsp;{{ best.lastName }}</strong>
                                 </p>
@@ -193,7 +193,7 @@
         var deliveredData = [cost , (100-cost)];
     </script>
     <!-- dashboard-->
-    <script src="{{('js/dashboard.js') }}"></script>
+    <script src="{{asset('js/dashboard.js') }}"></script>
 {% endblock %}
 
 

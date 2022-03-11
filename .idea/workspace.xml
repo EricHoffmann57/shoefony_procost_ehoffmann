@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="added pagination with knp Paginator&#10;small reworks">
-      <change afterPath="$PROJECT_DIR$/public/user.jpg" afterDir="false" />
+    <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="some refactoring done">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony_procost_ehoffmann.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony_procost_ehoffmann.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CompanyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/controllers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/controllers/hello_controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/webpack_encore.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Company/ProjectRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/ProjectRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/list_employees.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_employees.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/list_jobs.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_jobs.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/list_projects.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/list_projects.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +120,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
       <path value="$PROJECT_DIR$/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
-      <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/vendor/symfony/validator" />
@@ -213,7 +222,7 @@
       <workItem from="1646644355777" duration="6716000" />
       <workItem from="1646652730337" duration="27000" />
       <workItem from="1646652890934" duration="108042000" />
-      <workItem from="1646905766882" duration="48736000" />
+      <workItem from="1646905766882" duration="54342000" />
     </task>
     <task id="LOCAL-00001" summary="employees CRUD done&#10;jobs CRUD done">
       <created>1646652952133</created>
@@ -299,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646998303533</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="some refactoring done">
+      <created>1647010638169</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1647010638169</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,6 +345,7 @@
     <MESSAGE value="fixtures loaded for testing purpose&#10;some bugs corrections" />
     <MESSAGE value="minor changes" />
     <MESSAGE value="added pagination with knp Paginator&#10;small reworks" />
-    <option name="LAST_COMMIT_MESSAGE" value="added pagination with knp Paginator&#10;small reworks" />
+    <MESSAGE value="some refactoring done" />
+    <option name="LAST_COMMIT_MESSAGE" value="some refactoring done" />
   </component>
 </project>

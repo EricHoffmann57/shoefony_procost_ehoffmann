@@ -27,6 +27,7 @@ final class MainController extends AbstractController
     #[Route('/', name: 'main_homepage', methods: ['GET'])]
     public function homepage(): Response
     {
+
         $countEmployees = $this->employeeRepository->countEmployees();
         $getPendingProjects = $this->projectRepository->getPendingProjects();
         $getReleasedProjects = $this->projectRepository->getReleasedProjects();

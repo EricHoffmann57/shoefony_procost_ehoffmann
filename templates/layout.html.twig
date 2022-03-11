@@ -2,7 +2,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" type="text/css" href="../../css/main.css"/>
+    <link rel="stylesheet" type="text/css" href={{ asset('css/main.css') }}/>
 {% endblock %}
 
 {% block body %}
@@ -18,7 +18,7 @@
 </header>
     <aside class="app-sidebar">
         <div class="app-sidebar__user">
-            <img class="app-sidebar__user-avatar" src="../../img/user.jpg" alt="User Image">
+            <img class="app-sidebar__user-avatar" src={{ asset('img/user.jpg') }} alt="User Image">
             <div>
                 <p class="app-sidebar__user-name">John Doe</p>
                 <p class="app-sidebar__user-designation">Manager</p>
