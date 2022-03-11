@@ -23,9 +23,9 @@ class EmployeeEditController extends AbstractController
     public function projectsCreatePage(int $id, Request $request): Response
     {
         $employee = $this->employeeRepository->find($id);
-        if($employee == null)
+        if($employee === null)
         {
-            throw new NotFoundHttpException('This page does not exists!');
+            throw new NotFoundHttpException('employee '.$id.' not found!');
         }
         $form = $this->createForm(EmployeeType::class, $employee);
         $form->handleRequest($request);

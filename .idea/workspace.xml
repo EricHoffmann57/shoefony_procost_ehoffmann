@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57d36d16-48df-416b-8658-ee2a384044f9" name="Default Changelist" comment="added confirm for delete buttons">
+      <change afterPath="$PROJECT_DIR$/templates/bundles/TwigBundle/Exception/error404.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CompanyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CompanyController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/EmployeeControllers/EmployeeEditController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmployeeControllers/EmployeeEditController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EmployeeControllers/EmployeeFormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EmployeeControllers/EmployeeFormController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/JobControllers/JobDelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JobControllers/JobDelController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/JobControllers/JobEditController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JobControllers/JobEditController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/JobControllers/JobFormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/JobControllers/JobFormController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MainController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ProjectControllers/ProjectEditController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ProjectControllers/ProjectEditController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/EmployeeRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Company/JobRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/JobRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Company/ProjectRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/ProjectRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Company/TodoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Company/TodoRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/details_project.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/details_project.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/company/form_job_delete.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/company/form_job_delete.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +211,7 @@
       <workItem from="1646644355777" duration="6716000" />
       <workItem from="1646652730337" duration="27000" />
       <workItem from="1646652890934" duration="108042000" />
-      <workItem from="1646905766882" duration="61200000" />
+      <workItem from="1646905766882" duration="67224000" />
     </task>
     <task id="LOCAL-00001" summary="employees CRUD done&#10;jobs CRUD done">
       <created>1646652952133</created>
@@ -324,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647017390974</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added confirm for delete buttons">
+      <created>1647026541690</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1647026541690</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

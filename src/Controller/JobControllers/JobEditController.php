@@ -24,9 +24,9 @@ class JobEditController extends AbstractController{
     public function projectsCreatePage(int $id, Request $request): Response
     {
         $job = $this->jobRepository->find($id);
-        if($job == null)
+        if($job === null)
         {
-            throw new NotFoundHttpException('This page does not exists!');
+            throw new NotFoundHttpException('job '.$id.' not found!');
         }
 
         $form = $this->createForm(JobType::class, $job);

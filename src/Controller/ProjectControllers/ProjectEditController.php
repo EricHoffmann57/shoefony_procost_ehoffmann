@@ -24,9 +24,9 @@ class ProjectEditController extends AbstractController{
     public function projectsCreatePage(int $id, Request $request): Response
     {
         $project = $this->projectRepository->find($id);
-        if($project == null)
+        if($project === null)
         {
-            throw new NotFoundHttpException('This page does not exists!');
+            throw new NotFoundHttpException('project '.$id.' not found!');
         }
         $form = $this->createForm(ProjectType::class, $project);
         $form->handleRequest($request);

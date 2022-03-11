@@ -60,9 +60,9 @@ class CompanyController extends AbstractController
     {
         $employee = $this->employeeRepository->find($id);
 
-        if($employee == null)
+        if($employee === null)
         {
-            throw new NotFoundHttpException('This page does not exists!');
+            throw new NotFoundHttpException('employee '.$id.' not found!');
         }
         $employeesOnTodo = $this->todoRepository->getEmployeeHasTodo($id);
         $allTodos = $employeesOnTodo;
@@ -131,9 +131,9 @@ class CompanyController extends AbstractController
     public function detailProject(int $id, Request $request ): Response
     {
         $project = $this->projectRepository->find($id);
-        if($project == null)
+        if($project === null)
         {
-            throw new NotFoundHttpException('This page does not exists!');
+            throw new NotFoundHttpException('project '.$id.' not found!');
         }
         //End a project by deleting or adding a release status
 
