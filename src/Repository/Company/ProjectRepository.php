@@ -6,7 +6,6 @@ use App\Entity\Employee;
 use App\Entity\Project;
 use App\Entity\Todo;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -26,10 +25,25 @@ class ProjectRepository extends ServiceEntityRepository
         );
         $this->date = new \DateTime('now');
     }
+
+    /**
+     * @param Project $entity
+     * @param bool $flush
+     */
+    public function add(Project $entity, bool $flush = true): void
+    {
+        $this->_em->persist($entity);
+        if ($flush)
+        {
+            $this->_em->flush();
+        }
+    }
+
     public function remove(Project $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
-        if ($flush) {
+        if ($flush)
+        {
             $this->_em->flush();
         }
     }
@@ -39,11 +53,7 @@ class ProjectRepository extends ServiceEntityRepository
             ->select('COUNT(p.id) as projects')
             ->where("p.releaseDate IS NULL ")
         ;
-        try {
             return $qb->getQuery()->getOneOrNullResult();
-        } catch (NonUniqueResultException $e) {
-            $e;
-        }
     }
 
     public function getReleasedProjects(): array
@@ -52,11 +62,7 @@ class ProjectRepository extends ServiceEntityRepository
             ->select('COUNT(p.id) as projects')
             ->where("p.releaseDate IS NOT NULL ")
         ;
-        try {
             return $qb->getQuery()->getOneOrNullResult();
-        } catch (NonUniqueResultException $e) {
-            $e;
-        }
     }
 
     public function findLastProjects(): array
@@ -80,11 +86,7 @@ class ProjectRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('s')
             ->select("SUM(s.sellingPrice) as sell")
         ;
-        try {
             return $qb->getQuery()->getOneOrNullResult();
-        } catch (NonUniqueResultException $e) {
-            $e;
-        }
     }
 
     public function countDevCostAllProjectsSold(): array
@@ -103,5 +105,4 @@ class ProjectRepository extends ServiceEntityRepository
 
         return $qb->getQuery()->getResult();
     }
-
 }

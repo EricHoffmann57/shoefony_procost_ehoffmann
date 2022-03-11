@@ -28,7 +28,8 @@ class EmployeeFormController extends AbstractController
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
             $this->addFlash('success', 'New employee successfully added !');
             $this->employeeManager->save($employee);
 

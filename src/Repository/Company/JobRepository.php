@@ -33,19 +33,17 @@ class JobRepository extends ServiceEntityRepository
     public function add(Job $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
-        if ($flush) {
+        if ($flush)
+        {
             $this->_em->flush();
         }
     }
 
-    /**
-     * @param Job $entity
-     * @param bool $flush
-     */
     public function remove(Job $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
-        if ($flush) {
+        if ($flush)
+        {
             $this->_em->flush();
         }
     }

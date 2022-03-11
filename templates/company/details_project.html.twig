@@ -16,23 +16,23 @@
                         <tbody>
 
                         <tr>
-                            <th>Project</td>
+                            <th>Project</th>
                             <td>{{project.name}}</td>
                         </tr>
                         <tr>
-                            <th>Description</td>
+                            <th>Description</th>
                             <td>{{project.description}}</td>
                         </tr>
                         <tr>
-                            <th>Selling price</td>
+                            <th>Selling price</th>
                             <td>{{project.sellingPrice}} €</td>
                         </tr>
                         <tr>
-                            <th>Creation date</td>
+                            <th>Creation date</th>
                             <td>{{project.createdAt|date("d/m/Y")}}</td>
                         </tr>
                         <tr>
-                            <th>Release date</td>
+                            <th>Release date</th>
                             {% if project.releaseDate != null %}
                             <td>{{ project.releaseDate|date("d/m/Y")}}</td>
                             {% else %}
@@ -40,7 +40,7 @@
                             {% endif %}
                         </tr>
                         <tr>
-                            <th>Number of employees</td>
+                            <th>Number of employees</th>
                             <td>{{ countEmployeesOnTodo.count }}</td>
                         </tr>
                         <tr>
@@ -52,7 +52,7 @@
                             {% endif %}
                         </tr>
                         <tr>
-                            <th>Development cost</td>
+                            <th>Development cost</th>
                             {%  if devCostOneProject != null %}
                             <td>
                               {{ devCostOneProject.cost }} €
@@ -82,7 +82,7 @@
                             </div>
                             <div>
                                 {{ form_start(deleteProject) }}
-                                <button type="submit" class="btn btn-danger" name="delete">
+                                <button type="submit" class="btn btn-danger" name="delete" onclick="return confirm('are you sure?')" >
                                     <i class="fa fa-check mr-0"></i>
                                     Delete
                                 </button>

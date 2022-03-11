@@ -5,6 +5,7 @@ namespace App\Controller\ProjectControllers;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Form\ProjectType;
@@ -23,6 +24,10 @@ class ProjectEditController extends AbstractController{
     public function projectsCreatePage(int $id, Request $request): Response
     {
         $project = $this->projectRepository->find($id);
+        if($project == null)
+        {
+            throw new NotFoundHttpException('This page does not exists!');
+        }
         $form = $this->createForm(ProjectType::class, $project);
         $form->handleRequest($request);
 

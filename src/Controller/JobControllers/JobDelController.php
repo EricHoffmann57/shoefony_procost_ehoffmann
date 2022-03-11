@@ -5,6 +5,7 @@ namespace App\Controller\JobControllers;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Form\JobType;
@@ -23,15 +24,16 @@ class JobDelController extends AbstractController{
     public function projectsCreatePage(int $id, Request $request): Response
     {
         $job = $this->jobRepository->find($id);
-        if ($job === null) {
-            return $this->redirectToRoute('company_list_jobs', [
-            ], Response::HTTP_MOVED_PERMANENTLY);
+        if($job== null)
+        {
+            throw new NotFoundHttpException('This page does not exists!');
         }
         $deleteJob =$this->jobRepository->deleteJob();
         $delJob = $this->createForm(JobType::class, $job);
         $delJob->handleRequest($request);
 
-        if($delJob->isSubmitted()  && $delJob->isValid()){
+        if($delJob->isSubmitted()  && $delJob->isValid())
+        {
             $this->addFlash('success', 'Job has been successfully deleted !');
             $this->jobRepository->remove($job);
             return $this->redirectToRoute('company_list_jobs', [

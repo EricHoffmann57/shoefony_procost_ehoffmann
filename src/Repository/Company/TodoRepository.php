@@ -6,7 +6,6 @@ use App\Entity\Employee;
 use App\Entity\Project;
 use App\Entity\Todo;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -19,6 +18,8 @@ use Doctrine\Persistence\ManagerRegistry;
 class TodoRepository extends ServiceEntityRepository
 {
     private \DateTime $date;
+
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct(
@@ -26,10 +27,24 @@ class TodoRepository extends ServiceEntityRepository
         );
         $this->date = new \DateTime('now');
     }
+    /**
+     * @param Todo $entity
+     * @param bool $flush
+     */
+    public function add(Todo $entity, bool $flush = true): void
+    {
+        $this->_em->persist($entity);
+        if ($flush)
+        {
+            $this->_em->flush();
+        }
+    }
+
     public function remove(Todo $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
-        if ($flush) {
+        if ($flush)
+        {
             $this->_em->flush();
         }
     }
@@ -62,11 +77,7 @@ class TodoRepository extends ServiceEntityRepository
             ->where('e.project = :id')
             ->setParameter('id', $id)
         ;
-        try {
             return $qb->getQuery()->getOneOrNullResult();
-        } catch (NonUniqueResultException $e) {
-            $e;
-        }
     }
 
     public function countDevTimeAllProjects() : array
@@ -74,11 +85,7 @@ class TodoRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('c')
             ->select("SUM(c.devTime) as time")
         ;
-        try {
             return $qb->getQuery()->getOneOrNullResult();
-        } catch (NonUniqueResultException $e) {
-            $e;
-        }
     }
 
     public function countDevTimeOneProject(int $id): ?array
@@ -88,11 +95,8 @@ class TodoRepository extends ServiceEntityRepository
             ->where('p.project = :id')
             ->setParameter('id', $id)
         ;
-        try {
+
             return $qb->getQuery()->getOneOrNullResult();
-        } catch (NonUniqueResultException $e) {
-            $e;
-        }
     }
 
     public function devCostOneProject($id): array{
@@ -105,10 +109,6 @@ class TodoRepository extends ServiceEntityRepository
             ->andWhere("p.project = project.id")
             ->setParameter('id', $id)
         ;
-        try {
             return $qb->getQuery()->getOneOrNullResult();
-        } catch (NonUniqueResultException $e) {
-            $e;
-        }
     }
 }

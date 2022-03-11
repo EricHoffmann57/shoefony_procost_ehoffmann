@@ -20,6 +20,7 @@ use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -58,9 +59,10 @@ class CompanyController extends AbstractController
     public function detailEmployee(int $id, Request $request): Response
     {
         $employee = $this->employeeRepository->find($id);
-        if ($employee === null) {
-            return $this->redirectToRoute('company_list_employees', [
-            ], Response::HTTP_MOVED_PERMANENTLY);
+
+        if($employee == null)
+        {
+            throw new NotFoundHttpException('This page does not exists!');
         }
         $employeesOnTodo = $this->todoRepository->getEmployeeHasTodo($id);
         $allTodos = $employeesOnTodo;
@@ -70,9 +72,11 @@ class CompanyController extends AbstractController
         $form = $this->createForm(TodoType::class, $todo);
         $form->handleRequest($request);
 
-        if($form->isSubmitted()  && $form->isValid()){
+        if($form->isSubmitted()  && $form->isValid())
+        {
 
-            if($todo->getProject()->getReleaseDate() != null){
+            if($todo->getProject()->getReleaseDate() != null)
+            {
                 $this->addFlash('danger', 'This project is definitely released');
             }else{
                 $this->addFlash('success', 'You have successfully added time');
@@ -99,17 +103,14 @@ class CompanyController extends AbstractController
             $data,
             $request->query->getInt('page', 1),10
         );
-        foreach ($jobs as $job) {
-            $job->getId();
 
             $deleteJob = $this->jobRepository->deleteJob();
 
             return $this->render('company/list_jobs.html.twig', [
                 'jobs' => $jobs,
                 'deleteJob' => $deleteJob,
-                //'delJob' => $delJob->createView(),
             ]);
-        }
+
     }
 
     // projects list and details per project
@@ -130,15 +131,16 @@ class CompanyController extends AbstractController
     public function detailProject(int $id, Request $request ): Response
     {
         $project = $this->projectRepository->find($id);
-        if ($project === null) {
-            return $this->redirectToRoute('company_list_projects', [
-            ], Response::HTTP_MOVED_PERMANENTLY);
+        if($project == null)
+        {
+            throw new NotFoundHttpException('This page does not exists!');
         }
         //End a project by deleting or adding a release status
 
         $deleteProject = $this->createForm(DelProjectType::class, $project);
         $deleteProject->handleRequest($request);
-        if($deleteProject->isSubmitted()  && $deleteProject->isValid()){
+        if($deleteProject->isSubmitted()  && $deleteProject->isValid())
+        {
             $this->addFlash('success', 'Project has been successfully deleted');
             $this->projectRepository->remove($project);
             return $this->redirectToRoute('company_list_projects', [
@@ -147,7 +149,8 @@ class CompanyController extends AbstractController
 
         $releaseProject = $this->createForm(EndProjectType::class, $project);
         $releaseProject->handleRequest($request);
-        if($releaseProject->isSubmitted()  && $releaseProject->isValid()){
+        if($releaseProject->isSubmitted()  && $releaseProject->isValid())
+        {
             $project->setReleaseDate($this->date);
             $this->projectManager->save($project);
             $this->addFlash('success', 'Project release is done');
@@ -160,8 +163,10 @@ class CompanyController extends AbstractController
         $delayingProject = $this->createForm(DelayingProjectType::class, $todo);
         $delayingProject->handleRequest($request);
 
-        if($delayingProject->isSubmitted()  && $delayingProject->isValid()){
-            if($todo->getProject()->getReleaseDate() != null){
+        if($delayingProject->isSubmitted()  && $delayingProject->isValid())
+        {
+            if($todo->getProject()->getReleaseDate() != null)
+            {
                 $this->addFlash('danger', 'Project has been definitely released');
             }else{
                 $this->addFlash('success', 'Another employee has joined project!');

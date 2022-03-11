@@ -6,7 +6,6 @@ use App\Entity\Employee;
 use App\Entity\Project;
 use App\Entity\Todo;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -31,19 +30,17 @@ class EmployeeRepository extends ServiceEntityRepository
     public function add(Employee $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
-        if ($flush) {
+        if ($flush)
+        {
             $this->_em->flush();
         }
     }
 
-    /**
-     * @param Employee $entity
-     * @param bool $flush
-     */
     public function remove(Employee $entity, bool $flush = true): void
     {
         $this->_em->remove($entity);
-        if ($flush) {
+        if ($flush)
+        {
             $this->_em->flush();
         }
     }
@@ -52,11 +49,7 @@ class EmployeeRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('e')
             ->select('COUNT(e.id) as count');
-        try {
             return $qb->getQuery()->getOneOrNullResult();
-        } catch (NonUniqueResultException $e) {
-            $e;
-        }
     }
 
     public function getLastDevTimes(): array

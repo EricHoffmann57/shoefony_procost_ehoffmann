@@ -12,8 +12,7 @@
                     <div class="row mt-4">
                         <div class="offset-md-4 col-md-8">
                             <div class="form-group row">
-                                {{ form_label(delJob.name, delJob.name, {'label_attr': {'class': 'control-label col-md-3'}})
-                                }}
+                                {{ form_label(delJob.name, delJob.name, {'label_attr': {'class': 'control-label col-md-3'}}) }}
                                 <div class="col-md-8">
                                     {{form_widget(delJob.name, {'attr': {'class': 'form-control', 'placeholder': 'Example: Web developer'}})}}
                                     <div class="form-control-feedback text-danger">
@@ -29,7 +28,7 @@
 
                 <div class="row">
                     <div class="offset-md-6 col-md-6">
-                        <button type="submit" class="btn btn-danger"><i class="fa fa-delete"></i>Delete</button>
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('are you sure?')"><i class="fa fa-delete"></i>Delete</button>
                     </div>
                 </div>
 
