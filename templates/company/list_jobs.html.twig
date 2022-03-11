@@ -11,6 +11,12 @@
             <div>
                 <h1><i class="fa fa-dashboard"></i>&nbspJobs list</h1>
             </div>
+            <ul class="app-breadcrumb breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href={{path('main_homepage')}}><i class="fa fa-home fa-lg"></i></a>
+                </li>
+                <li class="breadcrumb-item">Jobs</li>
+            </ul>
         </div>
         {{ include('messages/message_flash.html.twig') }}
         <div class="tile pb-5">

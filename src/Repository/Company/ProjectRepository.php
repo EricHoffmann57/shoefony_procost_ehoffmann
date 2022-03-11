@@ -95,6 +95,7 @@ class ProjectRepository extends ServiceEntityRepository
             ->join(Todo::class, "todo")
             ->where('p.id = todo.project')
             ->andWhere("employee.id = todo.employee")
+            ->andWhere('p.releaseDate IS NOT NULL')
             ->groupBy('p.name')
             ->orderBy('p.created_at', 'DESC')
             ->setMaxResults(5)

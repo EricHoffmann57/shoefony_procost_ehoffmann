@@ -2,11 +2,11 @@
   {% set rentability = 1 %}
   {% set devCost = 1 %}
   {% set projectsSold = 1 %}
-    {% for last in totalCost %}
-
-            {% set devCost = (devCost + last.cost)  %}
-            {% set projectsSold = (projectsSold + last.sellingPrice) %}
-
+    {% for sold in totalSold %}
+       {% if sold.releaseDate != null %}
+            {% set devCost = (devCost + sold.cost)  %}
+            {% set projectsSold = (projectsSold + sold.sellingPrice) %}
+       {% endif %}
     {% endfor %}
     {% set rentability = 100 - ((devCost * 100)/projectsSold) %}
 {% set total = (released.projects /(released.projects + pending.projects))*100 %}

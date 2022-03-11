@@ -23,6 +23,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
+
 class CompanyController extends AbstractController
 {
     private \DateTime $date;
@@ -38,6 +39,7 @@ class CompanyController extends AbstractController
     ) {
         $this->date = new \DateTime('now');
     }
+
     // employees list and details per employee
     #[Route('/company/employees', name: 'company_list_employees')]
     public function listEmployees(PaginatorInterface $paginator, Request $request): Response
@@ -47,6 +49,7 @@ class CompanyController extends AbstractController
             $data,
             $request->query->getInt('page', 1),10
         );
+
         return $this->render('company/list_employees.html.twig', [
             'employees' => $employees,
         ]);

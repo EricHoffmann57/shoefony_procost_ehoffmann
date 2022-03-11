@@ -6,7 +6,6 @@ use App\Repository\Company\EmployeeRepository;
 use App\Repository\Company\ProjectRepository;
 use App\Repository\Company\TodoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -44,10 +43,10 @@ final class MainController extends AbstractController
            'released' => $getReleasedProjects,
             'allDevTime' => $countDevTimeAllProjects,
             'lastProjects' => $lastProjects,
-             'totalCost' => $soldProjects,
+             'totalSold' => $soldProjects,
             'totalSell' => $totalSell,
             'lastDevTimes' => $lastDevTimes,
-            "bestWorker"   => $bestWorker
+            'bestWorker' => $bestWorker,
         ]);
     }
 }
