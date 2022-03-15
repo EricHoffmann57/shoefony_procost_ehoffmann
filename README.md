@@ -4,7 +4,7 @@ Eric Hoffmann hoffma183u@etu.univ-lorraine.fr
 
 # fixtures
 
-Elles ont été testées dans le projet pour valider sa structure avec succès. Sur le dashboard, les valeurs de départ de la rentabilité et de du taux de livraison sera logiquement à zéro puisqu'aucun projet n'a de date de livraison actée. Les graphiques sont updatés en temps réel !
+Elles ont été testées dans le projet pour valider sa structure avec succès. Sur le dashboard, les valeurs de départ de la rentabilité et du taux de livraison sera logiquement à zéro puisqu'aucun projet n'a de date de livraison actée. Les graphiques sont updatés en temps réel !
 
 Après avoir longuement testé les différentes fonctionnalités, je n'ai pas trouvé de bug empéchant le fonctionnement de l'application, à part quelques lenteurs parfois au niveau de la base de données avec un rafraichissement pas toujours en temps réel que je me suis efforcé de corriger.
 
