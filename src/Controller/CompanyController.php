@@ -104,11 +104,11 @@ class CompanyController extends AbstractController
             $request->query->getInt('page', 1),10
         );
 
-            $deleteJob = $this->jobRepository->deleteJob();
+            $employees = $this->employeeRepository->findAll();
 
             return $this->render('company/list_jobs.html.twig', [
                 'jobs' => $jobs,
-                'deleteJob' => $deleteJob,
+                'employees' =>$employees
             ]);
 
     }
@@ -124,6 +124,7 @@ class CompanyController extends AbstractController
         );
         return $this->render('company/list_projects.html.twig', [
             'projects' => $projects,
+
         ]);
     }
 

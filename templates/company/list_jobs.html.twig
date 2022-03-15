@@ -1,11 +1,11 @@
 {% extends 'layout.html.twig' %}
-{% set array = [] %}
-    {% for del in deleteJob %}
-        {%  if del.id not in array %}
-        {%  set array = array|merge([del.id]) %}
-        {% endif %}
-    {% endfor %}
+
 {% block content %}
+    {%  set empArray = [] %}
+    {% for employee in employees %}
+        {% set empArray = empArray|merge([employee.job.id]) %}
+    {% endfor %}
+
     <main class="app-content">
         <div class="app-title">
             <div>
@@ -28,18 +28,31 @@
                     <thead>
                     <tr>
                         <th>Job name</th>
-                        <th></th>
+                        <th>Number of employees</th>
+                        <th>Edit/Delete</th>
                     </tr>
                     </thead>
                     <tbody>
                     {% for job in jobs %}
                     <tr>
                         <td>{{job.name}}</td>
+                        {% if job.id not in empArray %}
+                            <td>0</td>
+                        {% else %}
+                            {% set array = [] %}
+                            {% set res = 0 %}
+                            {% for emp in empArray|filter(emp => emp==job.id) %}
+                                {%  set array = array|merge([job.id]) %}
+                                {% set res = array|length %}
+                            {% endfor %}
+                            <td>{{res}}</td>
+                        {% endif %}
+
                         <td>
                             <a href={{path('edit_job', {'id': job.id})}} type="" class="btn btn-info btn-sm">
                                 <i class="fa fa-pencil mr-0"></i>
                             </a>
-                        {% if job.id not in array %}
+                        {% if job.id not in empArray %}
 
                                 <a href={{path('delete_job', {'id': job.id})}} type="" class="btn btn-danger btn-sm" name="delete">
                                         <i class="fa fa-trash mr-0"></i>

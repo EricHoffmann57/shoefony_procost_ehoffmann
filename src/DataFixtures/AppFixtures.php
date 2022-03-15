@@ -23,6 +23,7 @@ class AppFixtures extends Fixture
         ["software engineer"],
         ["mobile app developer"],
         ["computer system engineer"],
+        ["lead designer"],
     ]
     ;
 
@@ -41,7 +42,7 @@ class AppFixtures extends Fixture
         [
             'firstName' => "Yukiko",
             'lastName' => "Amagi",
-            "email" => "cherryblossom@gamil.com",
+            "email" => "cherryblossom@gmail.com",
         ],
 
         [
@@ -80,7 +81,12 @@ class AppFixtures extends Fixture
             'firstName' => "Lisa",
             'lastName' => "Hayes",
             "email" => "black.velvet@yahoo.co.jp",
-        ]
+        ],
+        [
+            'firstName' => "Max",
+            'lastName' => "Sterling",
+            "email" => "max.sterling@gmail.com",
+        ],
     ]
     ;
 
